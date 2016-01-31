@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django.utils import timezone
-
+from django.http import HttpResponse
 from .models import Decision, Question
 
 
@@ -40,3 +40,6 @@ class ResultsView(generic.DetailView):
 def vote(request, question_id):
     model = Question
     template_name = 'polls/results.html'
+    return HttpResponse("You're voting on question %s." % question_id)
+
+
