@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import Decision, Question
 
-class DecisionInline(admin.StackedInline):
+class DecisionInline(admin.TabularInline):
     model = Decision
     extra = 3
 
